@@ -73,8 +73,8 @@ export default function Footer() {
               <p className="text-[10px] tracking-[0.4em] uppercase text-[#5FA8E8] font-semibold mb-2">
                 Stay informed
               </p>
-              <h3 className="text-2xl font-semibold text-white leading-snug">
-                Subscribe to our health <span className="italic font-light text-white/70">newsletter</span>
+              <h3 className="text-2xl text-white leading-snug">
+                Subscribe to our health newsletter
               </h3>
             </div>
 
@@ -121,7 +121,7 @@ export default function Footer() {
                 🌿
               </span>
               <span className="text-lg font-semibold tracking-widest uppercase text-white">
-                Asclepius
+                Dr Sonam Tyagi
               </span>
             </Link>
 
@@ -233,7 +233,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <p className="text-xs text-white/30 tracking-wide">
-              © {year} Asclepius Health. All rights reserved.
+              © {year} Dr Sonam Tyagi. All rights reserved.
             </p>
 
             {/* Legal links */}

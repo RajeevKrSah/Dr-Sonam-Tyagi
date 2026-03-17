@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <section className="relative bg-[#F4F8FB] py-32 overflow-hidden">
+    <section className="relative bg-[#F4F8FB] py-16 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-3 gap-16 items-start">
 
@@ -49,7 +49,7 @@ export default function About() {
           </div>
 
         </div>
-        <div className="grid lg:grid-cols-2 gap-20 items-center mt-28">
+        <div className="grid lg:grid-cols-2 gap-20 items-center mt-14 md:mt-28">
 
           {/* LEFT SIDE */}
           <div>
@@ -129,17 +129,18 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
             </div>
 
-            <div className="mt-10">
-              <a
-                href="/about"
+            <div className="mt-10 cursor-pointer flex justify-center items-center">
+              <button
+                type="submit"
                 className="
-                  inline-block text-xs tracking-[0.2em] uppercase font-semibold
-                  text-[#1F3A4D] border-b border-[#1F3A4D]/30 pb-1
-                  hover:border-[#1F3A4D] transition-all duration-300
+                  group px-10 py-4 text-xs tracking-[0.2em] font-semibold uppercase
+                  border border-[#1F3A4D]/40 text-[#1F3A4D]
+                  hover:bg-[#1F3A4D] hover:text-white hover:border-[#1F3A4D]
+                  transition-all duration-300
                 "
               >
                 Learn More
-              </a>
+              </button>
             </div>
 
           </div>

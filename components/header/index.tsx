@@ -117,7 +117,7 @@ function MobileDrawer({
         {/* ── Drawer Header ── */}
         <div className="flex items-center justify-between px-7 py-6 border-b border-white/10 shrink-0">
           <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white/50">
-            Navigation
+            Dr Sonam Tyagi
           </span>
           <button
             onClick={onClose}
@@ -383,7 +383,7 @@ export default function Navbar() {
                   ${scrolled ? "text-gray-900" : "text-white"}
                 `}
               >
-                Asclepius
+                Dr Sonam Tyagi
               </span>
             </Link>
 

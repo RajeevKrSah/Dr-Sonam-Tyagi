@@ -34,7 +34,7 @@ export default function FAQs() {
   }
 
   return (
-    <section className="relative bg-[#EAF1F6] py-32 overflow-hidden">
+    <section className="relative bg-[#EAF1F6] py-16 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-24">
 
         {/* ───────── LEFT SIDE ───────── */}
