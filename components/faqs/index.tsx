@@ -1,33 +1,34 @@
 "use client"
 
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Plus, Minus } from "lucide-react"
 
 const faqs = [
   {
     question: "How can I schedule a consultation with Dr. Sonam Tyagi?",
     answer:
-      "You can schedule a consultation by contacting The Clinics in G32, New Delhi or by booking an appointment through our online contact form.",
+      "You can schedule a consultation by visiting Emanate Polyclinic in Safdarjung Enclave, New Delhi, or by calling us at +91 9266721515. Online bookings are also available via our contact form.",
   },
   {
-    question: "Does Dr. Sonam Tyagi offer bariatric surgery consultations?",
+    question: "What surgical specializations does Dr. Sonam Tyagi offer?",
     answer:
-      "Yes. Dr. Sonam Tyagi specializes in bariatric and general surgical procedures and provides detailed consultations to determine the most suitable treatment plan.",
+      "Dr. Sonam Tyagi specializes in Advanced Bariatric (Weight Loss) Surgery, Laparoscopic GI Surgery, and Metabolic Surgery for Diabetes control, alongside expert general surgical care.",
   },
   {
-    question: "What conditions are treated during consultation?",
+    question: "Are laparoscopic (minimally invasive) options available?",
     answer:
-      "Consultations cover bariatric surgery, weight management procedures, and a range of general surgical conditions requiring expert evaluation.",
+      "Yes, the majority of our procedures, including hernia repairs, gallbladder removals, and bariatric surgeries, are performed using advanced laparoscopic techniques to ensure faster recovery and minimal scarring.",
   },
   {
-    question: "Are new patients welcome for consultation?",
+    question: "What should I bring for my first surgical consultation?",
     answer:
-      "Absolutely. New patients are welcome and receive personalized guidance, clear treatment planning, and dedicated surgical care.",
+      "Please bring any recent medical reports, blood work results, or imaging (Ultrasounds/CT scans) related to your condition. This helps Dr. Tyagi provide a more accurate evaluation during your visit.",
   },
 ]
 
 export default function FAQs() {
-  const [openIndex, setOpenIndex] = useState<number | null>(1)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const toggle = (i: number) => {
     setOpenIndex(openIndex === i ? null : i)
@@ -35,86 +36,84 @@ export default function FAQs() {
 
   return (
     <section className="relative bg-[#EAF1F6] py-16 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-24">
+      <div className="container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-12 md:gap-24">
 
-        {/* ───────── LEFT SIDE ───────── */}
-        <div>
+        <div className="animate-fade-in">
 
           {/* Eyebrow */}
           <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
-            Patient support
+            Patient Support
           </p>
 
           {/* Heading */}
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#1F3A4D] leading-tight">
-            Frequently asked
+            Frequently Asked
             <br />
-            questions
+            Questions
           </h2>
 
           {/* Description */}
           <p className="mt-6 text-[#4A6575] max-w-md leading-relaxed">
-            Find answers to common questions about consultations,
-            surgical care, and treatment options.
+            Find expert answers to common questions about our clinical services,
+            surgical procedures, and patient care protocols.
           </p>
 
         </div>
 
         {/* ───────── RIGHT SIDE ───────── */}
-        <div className="space-y-8">
-
+        <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border-b border-[#1F3A4D]/10 pb-6"
+              className="border-b border-[#1F3A4D]/10 pb-4"
             >
-
               {/* Question */}
               <button
                 onClick={() => toggle(i)}
                 className="
                   flex w-full items-center justify-between text-left
-                  group
+                  group py-4
                   outline-none focus:outline-none
                   focus:ring-0 focus:ring-offset-0
                 "
               >
-                <span className="
-                  text-[#1F3A4D] text-lg font-light
-                  transition-colors duration-300
-                  group-hover:text-black
-                ">
+                <span className={`
+                  text-lg font-medium transition-colors duration-300
+                  ${openIndex === i ? "text-[#5FA8E8]" : "text-[#1F3A4D] group-hover:text-black"}
+                `}>
                   {faq.question}
                 </span>
 
-                <span className="
-                  text-[#7A97AA]
+                <span className={`
                   transition-all duration-300
-                  group-hover:text-[#1F3A4D]
-                ">
+                  ${openIndex === i ? "text-[#5FA8E8] rotate-180" : "text-[#7A97AA] group-hover:text-[#1F3A4D]"}
+                `}>
                   {openIndex === i ? (
-                    <Minus size={18} />
+                    <Minus size={20} />
                   ) : (
-                    <Plus size={18} />
+                    <Plus size={20} />
                   )}
                 </span>
               </button>
 
               {/* Answer */}
-              <div
-                className={`
-                  overflow-hidden transition-all duration-500
-                  ${openIndex === i ? "max-h-40 mt-4" : "max-h-0"}
-                `}
-              >
-                <p className="text-[#4A6575] leading-relaxed max-w-xl">
-                  {faq.answer}
-                </p>
-              </div>
-
+              <AnimatePresence>
+                {openIndex === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-[#4A6575] leading-relaxed max-w-xl pb-6">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
-
         </div>
 
       </div>
