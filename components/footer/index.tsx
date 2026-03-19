@@ -17,24 +17,19 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Services", href: "/services" },
-  { label: "For Patients", href: "/patients" },
   { label: "Contact", href: "/contact" },
-  { label: "Book Appointment", href: "/book" },
 ];
 
 const services = [
-  { label: "Mental Health Care", href: "/services/mental-health" },
-  { label: "Wellness Programs", href: "/services/wellness" },
-  { label: "Therapy Sessions", href: "/services/therapy" },
-  { label: "Covid-19 Support", href: "/covid" },
-  { label: "Group Counselling", href: "/services/group" },
-  { label: "Online Consultation", href: "/services/online" },
+  { label: "Bariatric Surgery", href: "/services/bariatric-surgery" },
+  { label: "General Surgery", href: "/services/general-surgery" },
+  { label: "Metabolic Surgery", href: "/services/metabolic-surgery" },
+  { label: "GI Surgery", href: "/services/gi-surgery" },
 ];
 
 const hours = [
-  { day: "Mon – Fri", time: "8:00 AM – 6:00 PM" },
-  { day: "Saturday", time: "9:00 AM – 4:00 PM" },
-  { day: "Sunday", time: "8:00 AM – 2:00 PM" },
+  { day: "Mon – Fri", time: "10:00 AM – 6:00 PM" },
+  { day: "Saturday", time: "10:00 AM – 5:00 PM" },
 ];
 
 const socials = [
@@ -42,12 +37,6 @@ const socials = [
   { Icon: FaTwitter, href: "#", label: "Twitter" },
   { Icon: FaInstagram, href: "#", label: "Instagram" },
   { Icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-];
-
-const legal = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Cookie Policy", href: "/cookies" },
 ];
 
 /* ─────────────── Component ─────────────── */
@@ -124,17 +113,12 @@ export default function Footer() {
                 Dr Sonam Tyagi
               </span>
             </Link>
-
-            <p className="text-sm text-white/45 leading-relaxed mb-8 max-w-xs">
-              Compassionate, evidence-based care for lasting well-being. Your journey to mental health and wellness starts here.
-            </p>
-
             {/* Contact details */}
             <ul className="space-y-3.5">
               {[
-                { Icon: FaPhone, text: "1-800-458-56987", href: "tel:18004585697" },
-                { Icon: FaEnvelope, text: "hello@asclepius.com", href: "mailto:hello@asclepius.com" },
-                { Icon: FaMapMarkerAlt, text: "47 Bakery Street, London, UK", href: "#" },
+                { Icon: FaPhone, text: "+91 9266721515", href: "tel:+919266721515" },
+                { Icon: FaEnvelope, text: "info@emanatedental.in", href: "mailto:info@emanatedental.in" },
+                { Icon: FaMapMarkerAlt, text: "Ground Floor, B-5 Block, B5/122, Humayunpur, Safdarjung Enclave, New Delhi, Delhi 110029", href: "#" },
               ].map(({ Icon, text, href }) => (
                 <li key={text}>
                   <a
@@ -235,23 +219,6 @@ export default function Footer() {
             <p className="text-xs text-white/30 tracking-wide">
               © {year} Dr Sonam Tyagi. All rights reserved.
             </p>
-
-            {/* Legal links */}
-            <div className="flex items-center gap-6">
-              {legal.map(({ label, href }, i) => (
-                <span key={label} className="flex items-center gap-6">
-                  <Link
-                    href={href}
-                    className="text-xs text-white/30 hover:text-white/70 transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
-                  {i < legal.length - 1 && (
-                    <span className="w-px h-3 bg-white/10" />
-                  )}
-                </span>
-              ))}
-            </div>
 
             {/* Social icons */}
             <div className="flex items-center gap-2.5">

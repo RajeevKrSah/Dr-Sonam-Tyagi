@@ -37,7 +37,7 @@ export default function About() {
           {/* RIGHT */}
           <div className="text-[#4A6575] leading-relaxed text-[15px]">
             <p>
-              Currently visiting The Clinics in G32, New Delhi,
+              Practicing at Emanate Polyclinic in Safdarjung Enclave, 
               offering advanced bariatric and general surgical care
               within a modern medical environment.
             </p>
@@ -55,9 +55,9 @@ export default function About() {
           <div>
 
             {/* Main Image */}
-            <div className="relative h-[460px] rounded-[32px] overflow-hidden group">
+            <div className="relative h-[460px] rounded-lg overflow-hidden group">
               <Image
-                src="/hero.jpg"
+                src="/images/Dr Sonam Tyagi.jpeg"
                 alt="clinic"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -73,27 +73,6 @@ export default function About() {
               patient-first approach, delivering safe, precise, and
               personalized treatment for lasting health outcomes.
             </p>
-
-            {/* Doctor Card */}
-            <div className="flex items-center gap-4 mt-10">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                <Image
-                  src="/hero.jpg"
-                  alt="doctor"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div>
-                <p className="text-[#1F3A4D] font-medium tracking-wide">
-                  Dr. Sonam Tyagi
-                </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#7A97AA]">
-                  General & Bariatric Surgeon
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* RIGHT SIDE */}
@@ -118,9 +97,9 @@ export default function About() {
             </p>
 
             {/* Image */}
-            <div className="relative h-[240px] rounded-[32px] overflow-hidden mt-12 group">
+            <div className="relative h-[240px] rounded-lg overflow-hidden mt-12 group">
               <Image
-                src="/service1.jpg"
+                src="/images/Dr Sonam in OPD.jpeg"
                 alt="patients"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -128,25 +107,8 @@ export default function About() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
             </div>
-
-            <div className="mt-10 cursor-pointer flex justify-center items-center">
-              <button
-                type="submit"
-                className="
-                  group px-10 py-4 text-xs tracking-[0.2em] font-semibold uppercase
-                  border border-[#1F3A4D]/40 text-[#1F3A4D]
-                  hover:bg-[#1F3A4D] hover:text-white hover:border-[#1F3A4D]
-                  transition-all duration-300
-                "
-              >
-                Learn More
-              </button>
-            </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   )

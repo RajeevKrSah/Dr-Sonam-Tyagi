@@ -28,9 +28,10 @@ const navItems: NavItem[] = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "Mental Health", href: "/services/mental-health" },
-      { label: "Wellness Programs", href: "/services/wellness" },
-      { label: "Therapy Sessions", href: "/services/therapy" },
+      { label: "Bariatric Surgery", href: "/services/bariatric-surgery" },
+      { label: "General Surgery", href: "/services/general-surgery" },
+      { label: "Metabolic Surgery", href: "/services/metabolic-surgery" },
+      { label: "GI Surgery", href: "/services/gi-surgery" },
     ],
   },
   { label: "Contact", href: "/contact" },
@@ -223,11 +224,11 @@ function MobileDrawer({
             "
           >
             <FaPhone size={11} />
-            <span>1 800 458 56 97</span>
+            <span>+91 9266721515</span>
           </a>
 
           <Link
-            href="/book"
+            href="/contact"
             onClick={onClose}
             className="
               block w-full py-3.5 text-center
@@ -321,16 +322,12 @@ export default function Navbar() {
             <div className="flex justify-between items-center py-2">
               <div className="flex items-center gap-6 text-xs text-white/80">
                 <span className="flex items-center gap-1.5">
-                  <FaClock size={10} className="opacity-70" />
-                  Mon – Fri&nbsp;8:00–18:00&nbsp;/&nbsp;Sun&nbsp;8:00–14:00
-                </span>
-                <span className="hidden sm:flex items-center gap-1.5">
                   <FaPhone size={10} className="opacity-70" />
-                  1-800-458-56987
+                  +91 9266721515
                 </span>
-                <span className="hidden lg:flex items-center gap-1.5">
+                <span className="hidden md:flex items-center gap-1.5">
                   <FaMapMarkerAlt size={10} className="opacity-70" />
-                  47 Bakery Street, London, UK
+                  Ground Floor, B-5 Block, B5/122, Humayunpur, Safdarjung Enclave, New Delhi, Delhi 110029
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -425,7 +422,7 @@ export default function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-6">
               <a
-                href="tel:18004585697"
+                href="tel:+919266721515"
                 className={`
                   flex items-center gap-2 text-sm font-medium
                   transition-colors duration-300
@@ -433,11 +430,11 @@ export default function Navbar() {
                 `}
               >
                 <FaPhone size={12} className="opacity-70" />
-                <span>1 800 458 56 97</span>
+                <span>+91 9266721515</span>
               </a>
 
               <Link
-                href="/book"
+                href="/contact"
                 className="
                   relative overflow-hidden group
                   px-6 py-2.5 text-xs tracking-[0.18em] font-semibold uppercase

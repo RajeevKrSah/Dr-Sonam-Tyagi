@@ -21,8 +21,8 @@ export default function Contact() {
 
           {/* Description */}
           <p className="text-[#4A6575] mt-6 max-w-md leading-relaxed">
-            Whether you have a question or need guidance, reach out and
-            we’ll respond with care and clarity.
+            Schedule a consultation with Dr. Sonam Tyagi to discuss your surgical 
+            needs. We are committed to providing clear, expert guidance for your health journey.
           </p>
 
           {/* ───────── FORM ───────── */}
@@ -120,7 +120,7 @@ export default function Contact() {
         <div className="relative h-[620px] overflow-hidden group">
 
           <iframe
-            src="https://www.google.com/maps?q=New+York&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504.241499400052!2d77.187867!3d28.56251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d4c1a3fb1bf%3A0xebd750fbe5e38677!2sEmanate%20Polyclinic!5e0!3m2!1sen!2sin!4v1773912913354!5m2!1sen!2sin"
             className="w-full h-full border-0"
             loading="lazy"
           />

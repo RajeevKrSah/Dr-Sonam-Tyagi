@@ -19,22 +19,22 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    eyebrow: "Trusted by 20,000+ patients",
-    title: "Get Expert Advice",
+    eyebrow: "Trusted Surgical Excellence",
+    title: "Advanced Surgical Care",
     subtitle:
-      "Compassionate, evidence-based care tailored to your unique journey towards lasting well-being.",
-    cta: { label: "Who We Are", href: "/about" },
+      "Expert Laparoscopic and Bariatric surgery focused on precision, safety, and your long-term health at Emanate Polyclinic.",
+    cta: { label: "Learn More", href: "/about" },
     image: "/hero.jpg",
     position: "center",
   },
   {
     id: 2,
-    eyebrow: "Award-winning care since 2008",
-    title: "Find Inner Peace",
+    eyebrow: "Patient-Centered Precision",
+    title: "Expertise You Can Trust",
     subtitle:
-      "Support when you need it most — expert therapists and wellness coaches ready to guide you.",
+      "Dr. Sonam Tyagi combines years of clinical experience with modern technology to deliver safe surgical outcomes.",
     cta: { label: "Our Services", href: "/services" },
-    image: "/hero.jpg",
+    image: "/images/Dr Sonam in OPD.jpeg",
     position: "50% 30%",
   },
 ];
@@ -247,7 +247,7 @@ export default function HeroCarousel() {
                   <span className="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-40" />
                   <FaPlay
                     size={11}
-                    className="ml-0.5 text-white group-hover:text-gray-900 transition-colors duration-300"
+                    className="ml-0.5 text-white group-hover:text-[#5FA8E8] transition-colors duration-300"
                   />
                 </span>
                 <span className="text-xs tracking-[0.2em] uppercase text-white/80 group-hover:text-white transition-colors duration-300">
