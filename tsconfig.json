@@ -33,7 +33,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/common/AwardWin",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

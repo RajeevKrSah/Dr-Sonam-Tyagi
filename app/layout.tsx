@@ -101,6 +101,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${raleway.variable} antialiased bg-white text-gray-900`}
       >
         {/* Accessibility */}
