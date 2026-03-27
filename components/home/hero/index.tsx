@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { FaPlay, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 /* ─────────────── Types ─────────────── */
 interface Slide {
@@ -168,58 +169,45 @@ export default function HeroCarousel() {
           <div className="max-w-2xl xl:max-w-3xl">
 
             {/* Eyebrow */}
-            <p
+            <motion.p
               key={`eyebrow-${current}`}
-              className={`
-                text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4
-                ${animating
-                  ? "opacity-0 -translate-y-2"
-                  : "opacity-100 translate-y-0 transition-all duration-700 delay-100"
-                }
-              `}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: animating ? 0 : 1, y: animating ? -20 : 0 }}
+              transition={{ duration: 0.7, delay: animating ? 0 : 0.1, ease: "easeOut" }}
+              className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4"
             >
               {slide.eyebrow}
-            </p>
+            </motion.p>
 
             {/* Headline */}
-            <h1
+            <motion.h1
               key={`title-${current}`}
-              className={`
-                text-3xl md:text-5xl lg:text-7xl
-                font-light tracking-tight text-white mb-6
-                ${animating
-                  ? "opacity-0 translate-y-6"
-                  : "opacity-100 translate-y-0 transition-all duration-700 delay-200"
-                }
-              `}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: animating ? 0 : 1, y: animating ? 30 : 0 }}
+              transition={{ duration: 0.7, delay: animating ? 0 : 0.2, ease: "easeOut" }}
+              className="text-3xl md:text-5xl lg:text-7xl font-light tracking-tight text-white mb-6"
             >
               {slide.title}
-            </h1>
+            </motion.h1>
 
             {/* Subtitle */}
-            <p
+            <motion.p
               key={`sub-${current}`}
-              className={`
-                text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-12
-                ${animating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0 transition-all duration-700 delay-300"
-                }
-              `}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: animating ? 0 : 1, y: animating ? 20 : 0 }}
+              transition={{ duration: 0.7, delay: animating ? 0 : 0.3, ease: "easeOut" }}
+              className="text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-12"
             >
               {slide.subtitle}
-            </p>
+            </motion.p>
 
             {/* Action Row */}
-            <div
+            <motion.div
               key={`actions-${current}`}
-              className={`
-                flex flex-wrap items-center gap-6
-                ${animating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0 transition-all duration-700 delay-[400ms]"
-                }
-              `}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: animating ? 0 : 1, y: animating ? 20 : 0 }}
+              transition={{ duration: 0.7, delay: animating ? 0 : 0.4, ease: "easeOut" }}
+              className="flex flex-wrap items-center gap-6"
             >
               <a
                 href={slide.cta.href}
@@ -254,7 +242,7 @@ export default function HeroCarousel() {
                   Watch Intro
                 </span>
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,15 +1,51 @@
 "use client"
 
 import Image from "next/image"
+import { motion, Variants } from "framer-motion"
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" }
+  },
+}
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" }
+  },
+}
 
 export default function About() {
   return (
     <section className="relative bg-[#F4F8FB] py-16 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-12 lg:px-20">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="container mx-auto px-4 md:px-12 lg:px-20"
+      >
         <div className="grid lg:grid-cols-3 gap-16 items-start">
 
           {/* LEFT */}
-          <div>
+          <motion.div variants={itemVariants}>
             <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
               About
             </p>
@@ -17,10 +53,10 @@ export default function About() {
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#1F3A4D] leading-tight">
               Expert surgical care designed around you
             </h2>
-          </div>
+          </motion.div>
 
           {/* MIDDLE */}
-          <div className="text-[#4A6575] leading-relaxed text-[15px]">
+          <motion.div variants={itemVariants} className="text-[#4A6575] leading-relaxed text-[15px]">
             <p>
               Dr. Sonam Tyagi delivers specialized surgical care with a
               strong focus on patient safety and minimally invasive
@@ -32,10 +68,10 @@ export default function About() {
               and empowering patients to make confident healthcare
               decisions.
             </p>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="text-[#4A6575] leading-relaxed text-[15px]">
+          <motion.div variants={itemVariants} className="text-[#4A6575] leading-relaxed text-[15px]">
             <p>
               Practicing at Emanate Polyclinic in Safdarjung Enclave, 
               offering advanced bariatric and general surgical care
@@ -46,26 +82,29 @@ export default function About() {
               The goal is simple — helping patients achieve healthier
               lives through safe and effective surgical solutions.
             </p>
-          </div>
+          </motion.div>
 
         </div>
         <div className="grid lg:grid-cols-2 gap-20 items-center mt-14 md:mt-28">
 
           {/* LEFT SIDE */}
-          <div>
+          <motion.div variants={itemVariants}>
 
             {/* Main Image */}
-            <div className="relative h-[460px] rounded-lg overflow-hidden group">
+            <motion.div 
+              variants={imageVariants}
+              className="relative h-[460px] rounded-lg overflow-hidden group"
+            >
               <Image
                 src="/images/Dr Sonam Tyagi.jpeg"
                 alt="clinic"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
 
               {/* subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
+            </motion.div>
 
             {/* Text */}
             <p className="mt-8 text-[#4A6575] leading-relaxed max-w-lg">
@@ -73,10 +112,10 @@ export default function About() {
               patient-first approach, delivering safe, precise, and
               personalized treatment for lasting health outcomes.
             </p>
-          </div>
+          </motion.div>
 
           {/* RIGHT SIDE */}
-          <div>
+          <motion.div variants={itemVariants}>
 
             {/* Eyebrow */}
             <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
@@ -97,19 +136,22 @@ export default function About() {
             </p>
 
             {/* Image */}
-            <div className="relative h-[240px] rounded-lg overflow-hidden mt-12 group">
+            <motion.div 
+              variants={imageVariants}
+              className="relative h-[240px] rounded-lg overflow-hidden mt-12 group"
+            >
               <Image
                 src="/images/Dr Sonam in OPD.jpeg"
                 alt="patients"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion";
+
 export default function Contact() {
 
   return (
@@ -7,7 +9,12 @@ export default function Contact() {
       <div className="container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-24 items-center">
 
         {/* ───────── LEFT SIDE ───────── */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
 
           {/* Eyebrow */}
           <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
@@ -114,10 +121,16 @@ export default function Contact() {
             </div>
 
           </form>
-        </div>
+        </motion.div>
 
         {/* ───────── RIGHT SIDE (MAP) ───────── */}
-        <div className="relative h-[620px] overflow-hidden group">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="relative h-[620px] overflow-hidden group shadow-xl rounded-xl"
+        >
 
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504.241499400052!2d77.187867!3d28.56251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d4c1a3fb1bf%3A0xebd750fbe5e38677!2sEmanate%20Polyclinic!5e0!3m2!1sen!2sin!4v1773912913354!5m2!1sen!2sin"
@@ -126,7 +139,7 @@ export default function Contact() {
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
-        </div>
+        </motion.div>
 
       </div>
     </section>

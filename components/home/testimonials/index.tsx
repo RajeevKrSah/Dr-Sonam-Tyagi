@@ -74,34 +74,57 @@ export default function Testimonials() {
         <section className="relative w-full bg-[#F4F8FB] py-16 md:py-32 overflow-hidden text-center">
             <div className="container mx-auto px-4 md:px-12 lg:px-20">
                 {/* ───────── STATS ───────── */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+                    }}
+                    className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24"
+                >
                     {[
                         { number: "250+", label: "Patients treated" },
                         { number: "15+", label: "Years of experience" },
                         { number: "100+", label: "Successful procedures" },
                         { number: "20k+", label: "Consultations delivered" },
                     ].map((item, i) => (
-                        <div key={i} className="text-center">
+                        <motion.div 
+                            key={i} 
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                            }}
+                            className="text-center"
+                        >
                             <h3 className="text-3xl md:text-4xl font-light text-[#1F3A4D]">
                                 {item.number}
                             </h3>
                             <p className="text-[10px] uppercase tracking-[0.3em] text-[#7A97AA] mt-3">
                                 {item.label}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* ───────── HEADING ───────── */}
-                <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
-                    Testimonials
-                </p>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
+                        Testimonials
+                    </p>
 
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#1F3A4D] mb-16">
-                    Patient experiences
-                    <br />
-                    that build trust
-                </h2>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#1F3A4D] mb-16">
+                        Patient experiences
+                        <br />
+                        that build trust
+                    </h2>
+                </motion.div>
 
                 {/* ───────── TESTIMONIAL CARD ───────── */}
                 <div className="max-w-4xl mx-auto relative overflow-hidden">

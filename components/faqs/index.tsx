@@ -38,7 +38,12 @@ export default function FAQs() {
     <section className="relative bg-[#EAF1F6] py-16 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-12 md:gap-24">
 
-        <div className="animate-fade-in">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
 
           {/* Eyebrow */}
           <p className="text-xs uppercase tracking-[0.4em] text-[#5FA8E8] font-semibold mb-4">
@@ -58,7 +63,7 @@ export default function FAQs() {
             surgical procedures, and patient care protocols.
           </p>
 
-        </div>
+        </motion.div>
 
         {/* ───────── RIGHT SIDE ───────── */}
         <div className="space-y-4">
